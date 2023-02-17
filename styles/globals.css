@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.header {
+  font-size: clamp(2rem, 7vmin, 5rem);
+  line-height: 1.2;
+}
+
+.subheader {
+  font-size: clamp(2rem, 7vmin, 4rem);
+  line-height: 1.2;
+}
+
+.text {
+  font-size: clamp(0.85rem, 7vmin, 1.15rem);
+  line-height: 1.7;
+}

@@ -1,4 +1,7 @@
 import "../styles/globals.css";
+import { Quicksand } from "@next/font/google";
+
+const quicksand = Quicksand({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
@@ -8,7 +11,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head />
-      <body>{children}</body>
+      <body
+        className={`${quicksand.className} min-h-screen flex flex-col justify-between`}
+      >
+        {children}
+      </body>
     </html>
   );
 }

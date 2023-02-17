@@ -3,11 +3,16 @@ import { fetchCategories, fetchJoke } from "@/utils/api";
 import { useEffect, useState } from "react";
 import Categories from "./Categories";
 import RefreshButton from "./RefreshButton";
+import { motion } from "framer-motion";
+import Joke from "./Joke";
+import { fadeIn } from "@/utils/motion";
 
 function Content() {
   const [joke, setJoke] = useState<string | null>(null);
   const [categories, setCategories] = useState<string[]>([]);
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(
+    "dev"
+  );
 
   useEffect(() => {
     fetchCategories().then((categories) => {
@@ -32,18 +37,27 @@ function Content() {
   }
 
   return (
-    <main>
-      <div>
-        <img alt="Nothing" />
-        {joke ? <p>{joke}</p> : <p>Please select one of the categories!</p>}
-      </div>
+    <motion.main
+      initial="hidden"
+      whileInView="show"
+      variants={fadeIn("up", "tween", 0.2, 0.4)}
+      className={`flex flex-col justify-center items.center space-y-8 px-[5%] sm:px-[10%] md:px-[15%] lg:px-[20%]`}
+    >
+      <motion.div
+        initial="hidden"
+        whileInView="show"
+        variants={fadeIn("up", "tween", 0.5, 0.4)}
+      >
+        {/* <img alt="Nothing" /> */}
+        <Joke joke={joke} />
+      </motion.div>
       <RefreshButton onClick={refreshJoke} />
       <Categories
         categories={categories}
         selectedCategory={selectedCategory}
         handleCategoryClick={handleCategoryClick}
       />
-    </main>
+    </motion.main>
   );
 }
 
