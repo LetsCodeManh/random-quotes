@@ -1,9 +1,7 @@
-import React from 'react'
+"use client";
 
 function Content() {
-  return (
-    <div>Main</div>
-  )
+  return <div>Hello</div>;
 }
 
-export default Content
+export default Content;
