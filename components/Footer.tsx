@@ -30,6 +30,7 @@ function Footer() {
         className="text text-dark hover:text-primary transition-colors"
         href="https://github.com/LetsCodeManh/random-quotes"
         target="_blank"
+        rel="noreferrer"
       >
         Repository
       </a>

@@ -31,6 +31,7 @@ This is a random-quotes application using the chucknorris API. https://api.chuck
 
 - Using prisma, and connecting the database and creating APIs routes. Isn't it the backend-side? Means this full project is a fullstack project?
 
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
